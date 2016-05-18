@@ -21,15 +21,6 @@ echo $OUT
 #UNCOMMENT to update npm, otherwise will be updated on instance init or rebuild
 #rm -f /opt/elasticbeanstalk/node-install/npm_updated
 
-#make sure node binaries can be found globally
-if [ ! -L /usr/bin/node ]; then
-  ln -s /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/node /usr/bin/node
-fi
-
-if [ ! -L /usr/bin/npm ]; then
-ln -s /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/npm /usr/bin/npm
-fi
-
 echo "checking npm..."
 if [ ! -f "/opt/elasticbeanstalk/node-install/npm_updated" ]; then
 cd /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/ && /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/npm update npm -g
