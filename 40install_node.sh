@@ -21,9 +21,6 @@ echo $OUT
 #UNCOMMENT to update npm, otherwise will be updated on instance init or rebuild
 #rm -f /opt/elasticbeanstalk/node-install/npm_updated
 
-#download & make install desired nginx version
-echo "checking nginx..."
-
 #make sure node binaries can be found globally
 if [ ! -L /usr/bin/node ]; then
   ln -s /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/node /usr/bin/node
@@ -39,6 +36,6 @@ cd /opt/elasticbeanstalk/node-install/node-v$NODE_VER-linux-$ARCH/bin/ && /opt/e
 touch /opt/elasticbeanstalk/node-install/npm_updated
 echo "YAY! Updated global NPM version to `npm -v`"
 else
-  echo "Skipping NPM -g version update. To update, please uncomment 40install_node.sh:12"
+  echo "Skipping NPM -g version update. To update, please uncomment 40install_node.sh:22"
 fi
 
